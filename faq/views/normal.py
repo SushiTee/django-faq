@@ -1,9 +1,22 @@
 from django.core.urlresolvers import reverse
 from django.shortcuts import get_object_or_404, redirect
-from django.views.generic.list_detail import object_detail
+from django.views.generic.detail import DetailView
 
 from faq.models import Topic, Question
 from faq.views.shallow import _fragmentify
+
+
+class ObjectDetailView(DetailView):
+    extra_context = None
+    def get_context_data(self, **kwargs):
+        context = super(self.__class__, self).get_context_data(**kwargs)
+        if self.extra_context is not None:
+            for key, value in self.extra_context.items():
+                if callable(value):
+                    context[key] = value()
+                else:
+                    context[key] = value
+        return context
 
 
 def topic_detail(request, slug):
@@ -29,9 +42,10 @@ def topic_detail(request, slug):
         'question_list': Question.objects.published().filter(topic__slug=slug),
     }
 
-    return object_detail(request, queryset=Topic.objects.published(),
-        extra_context=extra_context, template_object_name='topic',
-        template_name_field='template_name', slug=slug)
+    object_detail = ObjectDetailView.as_view(queryset=Topic.objects.published(),
+        extra_context=extra_context, context_object_name='question',
+        slug_url_kwarg=slug, template_name='template_name')
+    return object_detail(request)
 
 
 def question_detail(request, topic_slug, slug):

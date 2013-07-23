@@ -1,6 +1,6 @@
 from django.core.urlresolvers import reverse
 from django.shortcuts import get_object_or_404, redirect
-from django.views.generic.list_detail import object_list
+from django.views.generic import ListView
 
 from faq.models import Topic, Question
 
@@ -25,8 +25,8 @@ def topic_list(request):
             relate to the current :model:`sites.Site`.
 
     """
-    return object_list(request, queryset=Topic.objects.published(),
-        template_object_name='topic')
+    list_view = ListView.as_view(queryset=Topic.objects.published(), context_object_name='topic_list')
+    return list_view(request)
 
 
 def topic_detail(request, slug):
