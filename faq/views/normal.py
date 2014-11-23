@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from django.core.urlresolvers import reverse
-from django.shortcuts import get_object_or_404, redirect
+from django.shortcuts import get_object_or_404
 from django.views.generic.detail import DetailView
 
 from faq.models import Topic, Question
@@ -40,7 +40,7 @@ def topic_detail(request, slug):
     }
 
     object_detail = ObjectDetailView.as_view(queryset=Topic.objects.published(),
-        extra_context=extra_context, context_object_name='question',
+        extra_context=extra_context, context_object_name='topic',
         slug_url_kwarg=slug, template_name='template_name')
     return object_detail(request)
 
