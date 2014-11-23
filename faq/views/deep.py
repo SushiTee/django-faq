@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.views.generic.detail import DetailView
 
 from faq.models import Topic, Question

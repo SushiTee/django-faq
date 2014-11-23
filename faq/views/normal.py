@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from django.core.urlresolvers import reverse
 from django.shortcuts import get_object_or_404, redirect
 from django.views.generic.detail import DetailView
@@ -24,12 +26,7 @@ def topic_detail(request, slug):
     A detail view of a Topic
 
     Templates:
-        ``<topic_template_name>``
-            If the :model:`faq.Topic` object has a ``template_name`` value,
-            the system will attempt to load that template.
         :template:`faq/topic_detail.html`
-            If there is no ``template_name`` given or the template specified
-            does not exist the standard template will be used.
     Context:
         topic
             An :model:`faq.Topic` object.
