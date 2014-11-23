@@ -88,13 +88,13 @@ class FAQAdminBase(admin.ModelAdmin):
 class TopicAdmin(FAQAdminBase):
     fieldsets = (
         (None, {
-            'fields': ('title', 'slug', 'description', 'status', 'sites')}),
+            'fields': ('title', 'title_de', 'slug', 'description', 'description_de', 'status', 'sites')}),
     )
     inlines = (QuestionInline, )
-    list_display = ('title', 'description', 'status', 'question_count')
+    list_display = ('title', 'title_de', 'description', 'description_de', 'status', 'question_count')
     list_filter = ('status', 'sites', 'modified', 'created')
     prepopulated_fields = {'slug': ('title', )}
-    search_fields = ('title', 'description')
+    search_fields = ('title', 'title_de', 'description', 'description_de')
 
     def question_count(self, obj):
         """Returns the total number of Questions for this topic."""
@@ -105,13 +105,13 @@ class TopicAdmin(FAQAdminBase):
 class QuestionAdmin(FAQAdminBase):
     fieldsets = (
         (None, {
-            'fields': ('topic', 'question', 'slug', 'answer', 'status',
+            'fields': ('topic', 'question', 'question_de', 'slug', 'answer', 'answer_de', 'status',
                 'ordering')}),
     )
-    list_display = ('question', 'topic', 'status', 'ordering')
+    list_display = ('question', 'question_de', 'topic', 'status', 'ordering')
     list_filter = ('status', 'topic', 'modified', 'created')
     prepopulated_fields = {'slug': ('question', )}
-    search_fields = ('question', 'answer')
+    search_fields = ('question', 'question_de', 'answer', 'answer_de')
 
 
 admin.site.register(Topic, TopicAdmin)
