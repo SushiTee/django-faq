@@ -21,5 +21,5 @@ class QuestionForm(forms.ModelForm):
         #
         # If the user really wants to edit the slug, they can do so on the
         # Question change page.
-        fields = ('question', 'answer', 'ordering', 'status')
+        fields = ('question', 'question_de', 'answer', 'answer_de', 'ordering', 'status')
         model = Question
