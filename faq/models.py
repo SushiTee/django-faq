@@ -90,10 +90,13 @@ class FAQBase(models.Model):
 class Topic(FAQBase):
     """A topic that a Question can belong to."""
 
-    title = models.CharField(_(u'title'), max_length=255)
+    title = models.CharField(_(u'title EN'), max_length=255)
+    title_de = models.CharField(_(u'title DE'), default='', blank=True, max_length=255)
     slug = models.SlugField(_(u'slug'), unique=True, help_text=_(u'Used in \
         the URL for the topic. Must be unique.'))
-    description = models.TextField(_(u'description'), blank=True,
+    description = models.TextField(_(u'description EN'), blank=True,
+        help_text=_(u'A short description of this topic.'))
+    description_de = models.TextField(_(u'description DE'), default='', blank=True,
         help_text=_(u'A short description of this topic.'))
     sites = models.ManyToManyField(Site, verbose_name=_(u'sites'),
         related_name='faq_topics')
@@ -114,10 +117,12 @@ class Topic(FAQBase):
 class Question(FAQBase):
     """A frequently asked question."""
 
-    question = models.CharField(_(u'question'), max_length=255)
+    question = models.CharField(_(u'question EN'), max_length=255)
+    question_de = models.CharField(_(u'question DE'), default='', blank=True, max_length=255)
     slug = models.SlugField(_(u'slug'), unique=True, help_text=_(u'Used in \
         the URL for the Question. Must be unique.'))
-    answer = models.TextField(_(u'answer'))
+    answer = models.TextField(_(u'answer EN'))
+    answer_de = models.TextField(_(u'answer DE'), default='', blank=True)
     topic = models.ForeignKey(Topic, verbose_name=_(u'topic'),
         related_name='questions')
     ordering = models.PositiveSmallIntegerField(_(u'ordering'), blank=True,

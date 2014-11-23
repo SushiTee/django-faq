@@ -19,115 +19,116 @@ msgstr "FAQ"
 #: admin.py:29
 #, python-format
 msgid "Changed status to '%s'."
-msgstr ""
+msgstr "Status geänder zu '%s'."
 
 #: admin.py:42
 #, python-format
 msgid "%(count)s %(object)s was successfully %(verb)s."
 msgid_plural "%(count)s  %(object)s were successfully %(verb)s."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%(count)s %(object)s wurde erfolgreich %(verb)s."
+msgstr[1] "%(count)s  %(object)s wurden erfolgreich %(verb)s."
 
 #: admin.py:56
 #, python-format
 msgid "Draft selected %(verbose_name_plural)s"
-msgstr ""
+msgstr "Setze ausgewählt %(verbose_name_plural)s als Entwurf"
 
 #: admin.py:62
 #, python-format
 msgid "Publish selected %(verbose_name_plural)s"
-msgstr ""
+msgstr "Veröffentliche ausgewählte %(verbose_name_plural)s"
 
 #: admin.py:68
 #, python-format
 msgid "Remove selected %(verbose_name_plural)s"
-msgstr ""
+msgstr "Entferne ausgewähle %(verbose_name_plural)s"
 
 #: admin.py:102
 msgid "No. of Questions"
-msgstr ""
+msgstr "Nr. der Frage"
 
 #: models.py:76
 msgid "date created"
-msgstr ""
+msgstr "Erstellungsdatum"
 
 #: models.py:77
 msgid "date modified"
-msgstr ""
+msgstr "Änderungsdatum"
 
 #: models.py:78
 msgid "status"
-msgstr ""
+msgstr "Status"
 
 #: models.py:80
 msgid ""
 "Only objects with             \"published\" status will be displayed "
 "publicly."
-msgstr ""
+msgstr "Nuo Objekte mit Status             \"veröffentlicht\" werden öffentlich "
+"angezeigt."
 
 #: models.py:93
 msgid "title EN"
-msgstr ""
+msgstr "Titel EN"
 
 #: models.py:94
 msgid "title DE"
-msgstr ""
+msgstr "Titel DE"
 
 #: models.py:95 models.py:119
 msgid "slug"
-msgstr ""
+msgstr "Slug"
 
 #: models.py:95
 msgid "Used in         the URL for the topic. Must be unique."
-msgstr ""
+msgstr "Genutzt in         der URL für das Topic. Muss einzigartig sein."
 
 #: models.py:97
 msgid "description EN"
-msgstr ""
+msgstr "Beschreibung EN"
 
 #: models.py:98
 msgid "description DE"
-msgstr ""
+msgstr "Beschreibung DE"
 
 #: models.py:99
 msgid "A short description of this topic."
-msgstr ""
+msgstr "Eine kurze Beschreibung für das Topic"
 
 #: models.py:100
 msgid "sites"
-msgstr ""
+msgstr "Seiten"
 
-#: models.py:105 models.py:121
+#: models.py:105 models.py:123
 msgid "topic"
-msgstr ""
+msgstr "Topic"
 
 #: models.py:106
 msgid "topics"
-msgstr ""
+msgstr "Topics"
 
 #: models.py:119 models.py:132
 msgid "question EN"
-msgstr ""
+msgstr "Frage EN"
 
 #: models.py:120 models.py:133
 msgid "question DE"
-msgstr ""
+msgstr "Frage DE"
 
 #: models.py:121
 msgid "Used in         the URL for the Question. Must be unique."
-msgstr ""
+msgstr "Genutzt in         der URL für die Frage. Muss einzigartig sein."
 
 #: models.py:123
 msgid "answer EN"
-msgstr ""
+msgstr "Antwort EN"
 
 #: models.py:124
 msgid "answer DE"
-msgstr ""
+msgstr "Antwort DE"
 
 #: models.py:128
 msgid "ordering"
-msgstr ""
+msgstr "Sortierung"
 
 #: models.py:129
 msgid ""
@@ -135,37 +136,40 @@ msgid ""
 "the same topic. If not given this             question will be last in the "
 "list."
 msgstr ""
+"Eine Zahl um die Frage in Benzug             zu den Anderen im Selben Topic zu "
+"sortieren. Wenn keine zahl vergeben             ist wird die Frage die letzte in der Liste "
+"sein."
 
-#: models.py:138
+#: models.py:135
 msgid "questions"
-msgstr ""
+msgstr "Fragen"
 
 #: settings.py:16
 msgid "drafted"
-msgstr ""
+msgstr "Entwurf"
 
 #: settings.py:17
 msgid "published"
-msgstr ""
+msgstr "Veröffentlicht"
 
 #: settings.py:18
 msgid "removed"
-msgstr ""
+msgstr "Gelöscht"
 
 #: templates/faq/question_detail.html:8
 #, python-format
 msgid "FAQ: %(question)s"
-msgstr ""
+msgstr "FAQ: %(question)s"
 
 #: templates/faq/question_detail.html:12 templates/faq/topic_detail.html:16
 msgid "FAQ"
-msgstr ""
+msgstr "FAQ"
 
 #: templates/faq/topic_detail.html:12
 #, python-format
 msgid "FAQ: %(topic)s"
-msgstr ""
+msgstr "FAQ: %(topic)s"
 
 #: templates/faq/topic_list.html:12 templates/faq/topic_list.html.py:13
 msgid "Frequently Asked Questions"
-msgstr ""
+msgstr "Häufig gestellte Fragen (FAQ)"
