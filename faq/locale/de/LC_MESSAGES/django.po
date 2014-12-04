@@ -130,6 +130,16 @@ msgstr "Antwort DE"
 msgid "ordering"
 msgstr "Sortierung"
 
+#: models.py:104
+msgid ""
+"An integer used to order the topic             amongst others. "
+"If not given this             topic will be last in the "
+"list."
+msgstr ""
+"Eine Zahl um das Topic in Benzug             zu den Anderen zu "
+"sortieren. Wenn keine zahl vergeben             ist, wird das Topic die letzte in der Liste "
+"sein."
+
 #: models.py:129
 msgid ""
 "An integer used to order the question             amongst others related to "
@@ -137,7 +147,7 @@ msgid ""
 "list."
 msgstr ""
 "Eine Zahl um die Frage in Benzug             zu den Anderen im Selben Topic zu "
-"sortieren. Wenn keine zahl vergeben             ist wird die Frage die letzte in der Liste "
+"sortieren. Wenn keine zahl vergeben             ist, wird die Frage die letzte in der Liste "
 "sein."
 
 #: models.py:135

@@ -129,6 +129,13 @@ msgstr ""
 msgid "ordering"
 msgstr ""
 
+#: models.py:104
+msgid ""
+"An integer used to order the topic             amongst others. "
+"If not given this             topic will be last in the "
+"list."
+msgstr ""
+
 #: models.py:129
 msgid ""
 "An integer used to order the question             amongst others related to "

@@ -100,9 +100,13 @@ class Topic(FAQBase):
         help_text=_(u'A short description of this topic.'))
     sites = models.ManyToManyField(Site, verbose_name=_(u'sites'),
         related_name='faq_topics')
+    ordering = models.PositiveSmallIntegerField(_(u'ordering'), blank=True,
+        db_index=True, help_text=_(u'An integer used to order the topic \
+            amongst others. If not given this \
+            topic will be last in the list.'))
 
     class Meta(FAQBase.Meta):
-        ordering = ('title', 'slug')
+        ordering = ('ordering', 'title', 'slug')
         verbose_name = _(u'topic')
         verbose_name_plural = _(u'topics')
 

@@ -88,10 +88,10 @@ class FAQAdminBase(admin.ModelAdmin):
 class TopicAdmin(FAQAdminBase):
     fieldsets = (
         (None, {
-            'fields': ('title', 'title_de', 'slug', 'description', 'description_de', 'status', 'sites')}),
+            'fields': ('title', 'title_de', 'slug', 'description', 'description_de', 'status', 'sites', 'ordering')}),
     )
     inlines = (QuestionInline, )
-    list_display = ('title', 'title_de', 'description', 'description_de', 'status', 'question_count')
+    list_display = ('title', 'title_de', 'description', 'description_de', 'status', 'question_count', 'ordering')
     list_filter = ('status', 'sites', 'modified', 'created')
     prepopulated_fields = {'slug': ('title', )}
     search_fields = ('title', 'title_de', 'description', 'description_de')
