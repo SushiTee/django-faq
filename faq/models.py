@@ -50,21 +50,21 @@ class OnSiteManager(models.Manager):
 
     def on_site(self):
         """Returns only items related to the current site."""
-        return self.get_query_set().filter(**_field_lookups(self.model))
+        return self.get_queryset().filter(**_field_lookups(self.model))
 
     def drafted(self):
         """Returns only on-site items with a status of 'drafted'."""
-        return self.get_query_set().filter(
+        return self.get_queryset().filter(
             **_field_lookups(self.model, DRAFTED))
 
     def published(self):
         """Returns only on-site items with a status of 'published'."""
-        return self.get_query_set().filter(
+        return self.get_queryset().filter(
             **_field_lookups(self.model, PUBLISHED))
 
     def removed(self):
         """Returns only on-site items with a status of 'removed'."""
-        return self.get_query_set().filter(
+        return self.get_queryset().filter(
             **_field_lookups(self.model, REMOVED))
 
 
