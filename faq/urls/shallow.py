@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from django.conf.urls import patterns, url
+from django.conf.urls import url
 
 from faq.views.shallow import topic_list, topic_detail, question_detail
 
@@ -12,7 +12,7 @@ from faq.views.shallow import topic_list, topic_detail, question_detail
 #   /faq/#question
 #
 
-urlpatterns = patterns('',
+urlpatterns = (
     url(r'^$', topic_list, name='faq-topic-list'),
     url(r'^(?P<slug>[-\w]+)/$', topic_detail, name='faq-topic-detail'),
     url(r'^(?P<topic_slug>[-\w]+)/(?P<slug>[-\w]+)/$', question_detail,
